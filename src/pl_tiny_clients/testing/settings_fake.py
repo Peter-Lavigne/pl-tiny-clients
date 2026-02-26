@@ -14,6 +14,7 @@ class SettingsFake(Fake):
             deepseek_api_key="",
             openweather_api_key="",
             mbta_token="",
+            google_api_key="",
         )
         self.settings.spotify_client_secret = ""
         self.settings.spotify_refresh_token = ""
@@ -23,4 +24,5 @@ class SettingsFake(Fake):
         self.settings.deepseek_api_key = ""
         self.settings.openweather_api_key = ""
         self.settings.mbta_token = ""
+        self.settings.google_api_key = ""
         stub(get_settings)(self.settings)

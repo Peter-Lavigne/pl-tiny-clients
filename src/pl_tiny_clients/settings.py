@@ -30,6 +30,7 @@ class Settings(BaseSettings):
     deepseek_api_key: str = Field(validation_alias="DEEPSEEK_API_KEY", default="")
     openweather_api_key: str = Field(validation_alias="OPENWEATHER_API_KEY", default="")
     mbta_token: str = Field(validation_alias="MBTA_TOKEN", default="")
+    google_api_key: str = Field(validation_alias="GOOGLE_API_KEY", default="")
 
 
 @MockInUnitTests(MockReason.UNMITIGATED_SIDE_EFFECT)
