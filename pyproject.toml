@@ -1,6 +1,6 @@
 [project]
 name = "pl-tiny-clients"
-version = "0.0.22"
+version = "0.0.23"
 description = "Continuous integration and continuous deployment of python projects."
 readme = "README.md"
 authors = [{ name = "Peter Lavigne" }]
