@@ -1,6 +1,6 @@
 [project]
 name = "pl-tiny-clients"
-version = "0.0.34"
+version = "0.0.35"
 description = "A collection of tiny client libraries."
 readme = "README.md"
 authors = [{ name = "Peter Lavigne" }]
@@ -50,6 +50,9 @@ markers = [
 
 [tool.ruff]
 extend = "copied/pyproject.toml"
+
+[tool.ruff.lint]
+extend-ignore = ["UP047"]
 
 [tool.pyright]
 typeCheckingMode = "strict"

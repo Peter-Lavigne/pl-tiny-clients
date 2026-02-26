@@ -17,6 +17,9 @@ class Settings(BaseSettings):
         secrets_dir=Path.home() / ".secrets-files",
     )
 
+    # Env-specific config
+    platform: str = Field(validation_alias="PLATFORM", default="")
+
     # Secrets (from secrets dir locally, or AWS Secrets Manager when USE_AWS_SECRETS_MANAGER=true)
     spotify_client_secret: str = Field(
         validation_alias="SPOTIFY_CLIENT_SECRET", default=""
@@ -31,6 +34,9 @@ class Settings(BaseSettings):
     openweather_api_key: str = Field(validation_alias="OPENWEATHER_API_KEY", default="")
     mbta_token: str = Field(validation_alias="MBTA_TOKEN", default="")
     google_api_key: str = Field(validation_alias="GOOGLE_API_KEY", default="")
+    play_sound_test_wav_absolute_path: str = Field(
+        validation_alias="PLAY_SOUND_TEST_WAV_ABSOLUTE_PATH", default=""
+    )
 
 
 @MockInUnitTests(MockReason.UNMITIGATED_SIDE_EFFECT)

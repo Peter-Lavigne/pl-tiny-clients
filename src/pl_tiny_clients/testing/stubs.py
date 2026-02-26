@@ -3,7 +3,12 @@ from datetime import datetime
 
 from pl_mocks_and_fakes import fake_for, mock_for, stub
 
-from pl_tiny_clients.constants import SYSTEM_TIMEZONE
+from pl_tiny_clients.constants import PLATFORM_MAC, SYSTEM_TIMEZONE
+from pl_tiny_clients.display_power_events import DisplayPowerEventsResponse
+from pl_tiny_clients.display_power_events_on_mac import (
+    DisplayPowerEventsOnMacResponse,
+    display_power_events_on_mac,
+)
 from pl_tiny_clients.fetch_mbta_predictions import (
     MBTAPredictionAttributesResponse,
     MBTAPredictionResponse,
@@ -17,11 +22,14 @@ from pl_tiny_clients.fetch_openweathermap_onecall_api import (
     fetch_openweathermap_onecall_api,
 )
 from pl_tiny_clients.fetch_spotify_access_token import SpotifyRefreshResponse
+from pl_tiny_clients.get_volume_on_mac import get_volume_on_mac
+from pl_tiny_clients.settings import get_settings
 from pl_tiny_clients.spotify_get_playback_state import (
     SpotifyGetPlaybackStateResponse,
     spotify_get_playback_state,
 )
 from pl_tiny_clients.testing.constants import DEFAULT_DATETIME
+from pl_tiny_clients.testing.settings_fake import SettingsFake
 from pl_tiny_clients.testing.time_fake import TimeFake
 
 
@@ -86,3 +94,19 @@ def stub_mbta_predictions_response() -> MBTAPredictionsResponse:
 
 def stub_fetch_predictions(response: MBTAPredictionsResponse) -> None:
     mock_for(fetch_mbta_predictions).return_value = response
+
+
+def stub_display_power_events(value: DisplayPowerEventsResponse) -> None:
+    """Stubs the `get_volume` function to return the given value."""
+    assert fake_for(SettingsFake).settings.platform == PLATFORM_MAC
+    assert mock_for(get_settings)().platform == PLATFORM_MAC
+    stub(display_power_events_on_mac)(
+        DisplayPowerEventsOnMacResponse(value.most_recent_off, value.most_recent_on)
+    )
+
+
+def stub_get_volume(value: int) -> None:
+    """Stubs the `get_volume` function to return the given value."""
+    assert fake_for(SettingsFake).settings.platform == PLATFORM_MAC
+    assert mock_for(get_settings)().platform == PLATFORM_MAC
+    stub(get_volume_on_mac)(value)

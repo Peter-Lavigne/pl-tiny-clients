@@ -1,11 +1,15 @@
 from pl_mocks_and_fakes import Fake, stub
 
+from pl_tiny_clients.constants import PLATFORM_MAC
 from pl_tiny_clients.settings import Settings, get_settings
+
+PLATFORM_ENV_VAR_DEFAULT_TEST_VALUE = PLATFORM_MAC
 
 
 class SettingsFake(Fake):
     def __init__(self) -> None:
         self.settings = Settings(
+            platform="",
             spotify_client_secret="",
             spotify_refresh_token="",
             trello_token="",
@@ -16,6 +20,7 @@ class SettingsFake(Fake):
             mbta_token="",
             google_api_key="",
         )
+        self.settings.platform = PLATFORM_ENV_VAR_DEFAULT_TEST_VALUE
         self.settings.spotify_client_secret = ""
         self.settings.spotify_refresh_token = ""
         self.settings.trello_token = ""
