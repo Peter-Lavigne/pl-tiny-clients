@@ -25,6 +25,11 @@ class Settings(BaseSettings):
         validation_alias="SPOTIFY_REFRESH_TOKEN", default=""
     )
     trello_token: str = Field(validation_alias="TRELLO_TOKEN", default="")
+    anthropic_api_key: str = Field(validation_alias="ANTHROPIC_API_KEY", default="")
+    baseten_api_key: str = Field(validation_alias="BASETEN_API_KEY", default="")
+    deepseek_api_key: str = Field(validation_alias="DEEPSEEK_API_KEY", default="")
+    openweather_api_key: str = Field(validation_alias="OPENWEATHER_API_KEY", default="")
+    mbta_token: str = Field(validation_alias="MBTA_TOKEN", default="")
 
 
 @MockInUnitTests(MockReason.UNMITIGATED_SIDE_EFFECT)
