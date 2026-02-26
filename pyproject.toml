@@ -1,6 +1,6 @@
 [project]
 name = "pl-tiny-clients"
-version = "0.0.35"
+version = "0.0.36"
 description = "A collection of tiny client libraries."
 readme = "README.md"
 authors = [{ name = "Peter Lavigne" }]
