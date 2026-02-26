@@ -24,6 +24,7 @@ class Settings(BaseSettings):
     spotify_refresh_token: str = Field(
         validation_alias="SPOTIFY_REFRESH_TOKEN", default=""
     )
+    trello_token: str = Field(validation_alias="TRELLO_TOKEN", default="")
 
 
 @MockInUnitTests(MockReason.UNMITIGATED_SIDE_EFFECT)
