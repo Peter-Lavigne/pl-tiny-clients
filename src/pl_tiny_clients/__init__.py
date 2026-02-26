@@ -1,5 +1,6 @@
-from pl_tiny_clients._initialize_uv_project import initialize_uv_project
+from pl_tiny_clients._initialize_uv_project import UvProjectPath, initialize_uv_project
 
 __all__ = [
+    "UvProjectPath",
     "initialize_uv_project",
 ]

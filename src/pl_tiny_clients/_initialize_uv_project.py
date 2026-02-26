@@ -1,11 +1,12 @@
 import platform
 from pathlib import Path
+from typing import NewType
 
 from pl_run_program.run_simple_program import run_simple_program
 
 from pl_tiny_clients.constants import UV_PROGRAM
 
-UvProjectPath = Path
+UvProjectPath = NewType("UvProjectPath", Path)
 
 
 def initialize_uv_project(project_path: Path) -> UvProjectPath:
