@@ -1,6 +1,6 @@
 from pathlib import Path
 
-from pl_tiny_clients import initialize_uv_project
+from pl_tiny_clients.initialize_uv_project import initialize_uv_project
 
 
 def test_initialize_uv_project(tmp_path: Path) -> None:
