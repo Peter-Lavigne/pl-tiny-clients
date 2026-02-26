@@ -2,6 +2,7 @@ from pl_user_io.assert_yes import assert_yes
 from pl_user_io.task import task
 
 from pl_tiny_clients.constants import (
+    PYTEST_INTEGRATION_MARKER,
     SPOTIFY_DESKTOP_DEVICE_NAME,
     SPOTIFY_PHONE_DEVICE_NAME,
 )
@@ -18,9 +19,6 @@ from pl_tiny_clients.spotify_get_playback_state import (
 )
 from pl_tiny_clients.testing.assertions import ensure_inactive
 from pl_tiny_clients.testing.validate_keys import validate_keys
-from tests.constants import (
-    PYTEST_INTEGRATION_MARKER,
-)
 
 pytestmark = PYTEST_INTEGRATION_MARKER
 

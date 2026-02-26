@@ -2,6 +2,7 @@ from pl_user_io.assert_yes import assert_yes
 from pl_user_io.str_input import str_input
 from pl_user_io.task import task
 
+from pl_tiny_clients.constants import PYTEST_INTEGRATION_MARKER
 from pl_tiny_clients.fetch_spotify_access_token import fetch_spotify_access_token
 from pl_tiny_clients.spotify_get_playback_state import SpotifyTrackObject
 from pl_tiny_clients.spotify_get_playlist import (
@@ -11,7 +12,6 @@ from pl_tiny_clients.spotify_get_playlist import (
     spotify_get_playlist,
 )
 from pl_tiny_clients.testing.validate_keys import validate_keys
-from tests.constants import PYTEST_INTEGRATION_MARKER
 
 pytestmark = PYTEST_INTEGRATION_MARKER
 

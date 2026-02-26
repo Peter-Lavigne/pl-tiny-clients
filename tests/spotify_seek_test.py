@@ -2,13 +2,13 @@ import pytest
 from pl_user_io.assert_yes import assert_yes
 from pl_user_io.task import task
 
-from pl_tiny_clients.fetch_spotify_access_token import fetch_spotify_access_token
-from pl_tiny_clients.spotify_seek import spotify_seek
-from pl_tiny_clients.testing.assertions import ensure_inactive
-from tests.constants import (
+from pl_tiny_clients.constants import (
     PYTEST_MANUAL_MARKER,
     PYTEST_THIRD_PARTY_API_MARKERS,
 )
+from pl_tiny_clients.fetch_spotify_access_token import fetch_spotify_access_token
+from pl_tiny_clients.spotify_seek import spotify_seek
+from pl_tiny_clients.testing.assertions import ensure_inactive
 
 pytestmark = [*PYTEST_THIRD_PARTY_API_MARKERS, PYTEST_MANUAL_MARKER]
 

@@ -1,5 +1,7 @@
 from pathlib import Path
+from zoneinfo import ZoneInfo
 
+import pytest
 from pl_run_program import program_at_path
 
 UV_PROGRAM = program_at_path(Path.home() / ".local/bin/uv")
@@ -8,3 +10,35 @@ SPOTIFY_CLIENT_ID = "5dac1d5933fb4c89bc85a3067adb6af0"
 SPOTIFY_API_BASE_URL = "https://api.spotify.com/v1"
 SPOTIFY_DESKTOP_DEVICE_NAME = "Peter’s iMac"  # noqa: RUF001
 SPOTIFY_PHONE_DEVICE_NAME = "KB2005"
+
+SYSTEM_TIMEZONE = ZoneInfo("America/New_York")
+
+PYTEST_INTEGRATION_MARKER = pytest.mark.integration
+
+PYTEST_SLOW_MARKER = pytest.mark.slow
+PYTEST_NONDETERMINISTIC_MARKER = pytest.mark.nondeterministic
+PYTEST_DEPENDENT_MARKER = pytest.mark.dependent
+PYTEST_EXPENSIVE_MARKER = pytest.mark.expensive
+PYTEST_MANUAL_MARKER = pytest.mark.manual
+
+PYTEST_THIRD_PARTY_API_MARKERS = [
+    PYTEST_SLOW_MARKER,
+    PYTEST_NONDETERMINISTIC_MARKER,
+    PYTEST_DEPENDENT_MARKER,
+]
+
+PYTEST_MANUAL_MARKERS = [
+    PYTEST_SLOW_MARKER,
+    PYTEST_NONDETERMINISTIC_MARKER,
+    PYTEST_DEPENDENT_MARKER,
+    PYTEST_MANUAL_MARKER,
+]
+
+PYTEST_INTEGRATION_TEST_MARKERS = [
+    PYTEST_INTEGRATION_MARKER,
+    PYTEST_SLOW_MARKER,
+    PYTEST_NONDETERMINISTIC_MARKER,
+    PYTEST_DEPENDENT_MARKER,
+    PYTEST_EXPENSIVE_MARKER,
+    PYTEST_MANUAL_MARKER,
+]

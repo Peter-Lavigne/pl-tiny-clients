@@ -6,8 +6,8 @@ from pl_user_io.display import display
 from pl_user_io.task import task
 from pl_user_io.yes_no import yes_no
 
+from pl_tiny_clients.constants import PYTEST_INTEGRATION_MARKER
 from pl_tiny_clients.requests_wrapper import requests_wrapper
-from tests.constants import PYTEST_INTEGRATION_MARKER
 
 # Tests in this file make real API and system calls and use a combination of
 # automated and manual verification techniques.

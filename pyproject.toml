@@ -1,6 +1,6 @@
 [project]
 name = "pl-tiny-clients"
-version = "0.0.30"
+version = "0.0.31"
 description = "A collection of tiny client libraries."
 readme = "README.md"
 authors = [{ name = "Peter Lavigne" }]
@@ -12,6 +12,7 @@ dependencies = [
     "pl-user-io==0.0.17",
     "pydantic>=2.12.5",
     "pydantic-settings>=2.13.1",
+    "pytest==9.0.2",
 ]
 license = "Apache-2.0"
 license-files = ["LICENSE"]
@@ -26,7 +27,7 @@ requires = ["uv_build>=0.10.4,<0.11.0"]
 build-backend = "uv_build"
 
 [dependency-groups]
-dev = ["pyright==1.1.408", "pytest==9.0.2", "pytest-cov==7.0.0", "ruff==0.15.2"]
+dev = ["pyright==1.1.408", "pytest-cov==7.0.0", "ruff==0.15.2"]
 
 [tool.pytest.ini_options]
 addopts = [

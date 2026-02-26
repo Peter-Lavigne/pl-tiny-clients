@@ -1,7 +1,7 @@
 import string
 
+from pl_tiny_clients.constants import PYTEST_NONDETERMINISTIC_MARKER
 from pl_tiny_clients.random_str import random_str
-from tests.constants import PYTEST_NONDETERMINISTIC_MARKER
 
 pytestmark = [PYTEST_NONDETERMINISTIC_MARKER]
 
