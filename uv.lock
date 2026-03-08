@@ -250,7 +250,7 @@ wheels = [
 
 [[package]]
 name = "pl-tiny-clients"
-version = "0.0.41"
+version = "0.0.42"
 source = { editable = "." }
 dependencies = [
     { name = "pl-mocks-and-fakes" },
@@ -273,7 +273,7 @@ dev = [
 requires-dist = [
     { name = "pl-mocks-and-fakes", specifier = "==0.0.30" },
     { name = "pl-run-program", specifier = "==0.0.30" },
-    { name = "pl-user-io", specifier = "==0.0.17" },
+    { name = "pl-user-io", specifier = "==0.0.18" },
     { name = "pydantic", specifier = ">=2.12.5" },
     { name = "pydantic-settings", specifier = ">=2.13.1" },
     { name = "pytest", specifier = "==9.0.2" },
@@ -289,15 +289,15 @@ dev = [
 
 [[package]]
 name = "pl-user-io"
-version = "0.0.17"
+version = "0.0.18"
 source = { registry = "https://pypi.org/simple" }
 dependencies = [
     { name = "pl-mocks-and-fakes" },
     { name = "rich" },
 ]
-sdist = { url = "https://files.pythonhosted.org/packages/ca/3c/c4fa7a95cb174d7ddf3f790570799bb0183eb6975771643ea3a1b0639f05/pl_user_io-0.0.17.tar.gz", hash = "sha256:825f754390f533b7d5ad995639f037a23ca7fe914ee3359032a56cc74a377bd0", size = 9951, upload-time = "2026-02-26T13:30:41.521Z" }
+sdist = { url = "https://files.pythonhosted.org/packages/c8/b4/9c0022ef20966e04e41c12a8be23b9ab3c6fc39beefb09eb5899697cadff/pl_user_io-0.0.18.tar.gz", hash = "sha256:d0d882742b61344708b4065df90fd356aaeeb4e93ebbfc970dc8044976a6a5c7", size = 9958, upload-time = "2026-03-08T12:52:36.001Z" }
 wheels = [
-    { url = "https://files.pythonhosted.org/packages/a6/e8/ed8d72bcbcecaed2c8e10e870c751e4491960a8d4579f665c9b451589731/pl_user_io-0.0.17-py3-none-any.whl", hash = "sha256:0ccc0c7673c0840670c65c142bf0ebcbd2d4007459d9ade10ca08fa063e08fce", size = 16070, upload-time = "2026-02-26T13:30:42.237Z" },
+    { url = "https://files.pythonhosted.org/packages/fa/3e/34bfdc53e00d200c11698b9d76f5e03daaad3bbedc51cc565d3c2c975368/pl_user_io-0.0.18-py3-none-any.whl", hash = "sha256:75ce89dfebc1768e9b9eec79d14a6d32c489f803f57f2a8153cca4ac3f49ead8", size = 16086, upload-time = "2026-03-08T12:52:34.944Z" },
 ]
 
 [[package]]
