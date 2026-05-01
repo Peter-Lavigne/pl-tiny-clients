@@ -6,10 +6,10 @@ readme = "README.md"
 authors = [{ name = "Peter Lavigne" }]
 requires-python = ">=3.12"
 dependencies = [
-    "pl-run-program==0.0.30",
-    "pl-mocks-and-fakes==0.0.30",
-    "requests==2.32.3",
-    "pl-user-io==0.0.18",
+    "pl-run-program>=0.0.30",
+    "pl-mocks-and-fakes>=0.0.30",
+    "requests==2.33.1",
+    "pl-user-io>=0.0.18",
     "pydantic>=2.12.5",
     "pydantic-settings>=2.13.1",
     "pytest==9.0.2",
@@ -27,7 +27,7 @@ requires = ["uv_build>=0.10.4,<0.11.0"]
 build-backend = "uv_build"
 
 [dependency-groups]
-dev = ["pyright==1.1.408", "pytest-cov==7.0.0", "ruff==0.15.2"]
+dev = ["pyright==1.1.409", "pytest-cov==7.0.0", "ruff==0.15.2"]
 
 [tool.pytest.ini_options]
 addopts = [
