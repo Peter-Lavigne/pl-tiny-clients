@@ -18,6 +18,7 @@ class OpenWeatherMapWeatherIdResponse(TypedDict):
 class OpenWeatherMapWeatherReportResponse(TypedDict):
     dt: int
     feels_like: float  # Fahrenheit
+    uvi: float
     weather: list[OpenWeatherMapWeatherIdResponse]
 
 

@@ -60,6 +60,7 @@ def stub_weather_report_response() -> OpenWeatherMapWeatherReportResponse:
     return {
         "dt": int(DEFAULT_DATETIME.timestamp()),
         "feels_like": 0.0,
+        "uvi": 0.0,
         "weather": [stub_weather_id_response()],
     }
 
