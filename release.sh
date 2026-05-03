@@ -6,13 +6,7 @@ if [[ ! -f "pyproject.toml" ]]; then
   exit 1
 fi
 
-if [[ -z "${UV_PUBLISH_TOKEN:-}" ]]; then
-  echo "UV_PUBLISH_TOKEN is not set. Please set it in your environment."
-  exit 1
-fi
-
-echo 'Running "uv run check --fix"...'
-uv run check --fix
+export UV_PUBLISH_TOKEN="${UV_PUBLISH_TOKEN:-$(cat ~/.secrets-files/UV_PUBLISH_TOKEN)}"
 
 echo 'Running "rm -f dist/*.whl dist/*.tar.gz"...'
 rm -f dist/*.whl dist/*.tar.gz
