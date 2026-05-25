@@ -49,7 +49,7 @@ def fetch_openweathermap_onecall_api(
             "units": "imperial",
             "exclude": "minutely,daily,alerts",
         },
-        timeout=5
+        timeout=5,
     )
 
     response.raise_for_status()
