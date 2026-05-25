@@ -1,9 +1,10 @@
 from pprint import pprint
 
-from pl_user_io.assert_yes import assert_yes
-from pl_user_io.display import display
-
-from pl_tiny_clients.constants import BOSTON_LAT, BOSTON_LON, PYTEST_INTEGRATION_MARKER
+from pl_tiny_clients.constants import (
+    BOSTON_LAT,
+    BOSTON_LON,
+    PYTEST_MANUAL_MARKER,
+)
 from pl_tiny_clients.fetch_openweathermap_onecall_api import (
     OpenWeatherMapOneCallResponse,
     OpenWeatherMapWeatherIdResponse,
@@ -11,8 +12,10 @@ from pl_tiny_clients.fetch_openweathermap_onecall_api import (
     fetch_openweathermap_onecall_api,
 )
 from pl_tiny_clients.testing.validate_keys import validate_keys
+from pl_user_io.assert_yes import assert_yes
+from pl_user_io.display import display
 
-pytestmark = PYTEST_INTEGRATION_MARKER
+pytestmark = PYTEST_MANUAL_MARKER
 
 
 def test_fetch_onecall() -> None:
