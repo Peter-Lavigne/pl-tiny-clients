@@ -1,9 +1,15 @@
 from typing import TypedDict
 
+import httpx
 from pl_mocks_and_fakes import MockInUnitTests, MockReason
 
-from pl_tiny_clients.requests_wrapper import requests_wrapper
 from pl_tiny_clients.settings import get_settings
+
+# Todos:
+# - Clarify incoming data types
+# - Add MockReason
+# - Show less information to users when manual testing, or split into multiple tests
+# - Use pydantic for data validation
 
 
 class OpenWeatherMapOneCallQueryParams(TypedDict):
@@ -32,10 +38,9 @@ def fetch_openweathermap_onecall_api(
     lon: float,
     lat: float,
 ) -> OpenWeatherMapOneCallResponse:
-    return requests_wrapper(
+    response = httpx.get(
         "https://api.openweathermap.org/data/3.0/onecall",
-        OpenWeatherMapOneCallResponse,
-        query_params={
+        params={
             "lon": lon,
             "lat": lat,
             # API keys are obtained from https://home.openweathermap.org/api_keys
@@ -45,3 +50,6 @@ def fetch_openweathermap_onecall_api(
             "exclude": "minutely,daily,alerts",
         },
     )
+
+    response.raise_for_status()
+    return response.json()

@@ -40,10 +40,6 @@ dev = [
 addopts = [
     "-m",
     "not integration and not slow and not nondeterministic and not dependent and not expensive and not manual",
-    "-q",
-    "-rN",
-    "-s",
-    "--tb=short",
 ]
 markers = [
     "integration: (deprecated) marks tests as integration",
