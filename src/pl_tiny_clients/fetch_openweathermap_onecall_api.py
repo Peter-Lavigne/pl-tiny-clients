@@ -1,28 +1,21 @@
 from typing import TypedDict
 
 import httpx
-from pl_mocks_and_fakes import MockInUnitTests, MockReason
+from pl_mocks_and_fakes import MockInUnitTests, THIRD_PARTY_API_MOCK_REASONS
 
 from pl_tiny_clients.settings import get_settings
 
 # Todos:
-# - Clarify incoming data types
-# - Add MockReason
 # - Show less information to users when manual testing, or split into multiple tests
 # - Use pydantic for data validation
 
 
-class OpenWeatherMapOneCallQueryParams(TypedDict):
-    lon: float
-    lat: float
-
-
 class OpenWeatherMapWeatherIdResponse(TypedDict):
-    id: int
+    id: int  # Weather condition ID, from https://openweathermap.org/weather-conditions
 
 
 class OpenWeatherMapWeatherReportResponse(TypedDict):
-    dt: int
+    dt: int  # Unix timestamp
     feels_like: float  # Fahrenheit
     uvi: float
     weather: list[OpenWeatherMapWeatherIdResponse]
@@ -33,7 +26,7 @@ class OpenWeatherMapOneCallResponse(TypedDict):
     hourly: list[OpenWeatherMapWeatherReportResponse]
 
 
-@MockInUnitTests(MockReason.UNINVESTIGATED)
+@MockInUnitTests(*THIRD_PARTY_API_MOCK_REASONS)
 def fetch_openweathermap_onecall_api(
     lon: float,
     lat: float,
